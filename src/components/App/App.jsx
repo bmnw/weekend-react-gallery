@@ -3,6 +3,8 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList.jsx';
 import './App.css';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 function App() {
 
@@ -26,14 +28,6 @@ function App() {
       });
     } // end fetchPictures
 
-    // const likeSubmit = (inputID) => {
-    //   console.log('in likeSubmit, inputID', inputID);
-    //   // console.log(typeof inputID);
-    //   setLikedPictureID(inputID);
-    //   console.log('likedPictureID', likedPictureID);
-    //   // likePicture(likedPictureID);
-    // } // end likeSubmit
-
     const likePicture = (input) => {
       // event.preventDefault();
       console.log('in likePicture', input);
@@ -50,16 +44,19 @@ function App() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        {
-          <GalleryList 
-            pictureList={pictureList}
-            likePicture={likePicture}
-          />
-        }
-      
+          <header className="App-header">
+            <h1 className="App-title">Gallery of My Life</h1>
+          </header>
+          <Container maxWidth="sm">
+            <Grid container spacing={2}>
+            {
+              <GalleryList 
+                pictureList={pictureList}
+                likePicture={likePicture}
+              />
+            }
+            </Grid>
+          </Container>
       </div>
     );
 }
