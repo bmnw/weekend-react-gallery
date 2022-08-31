@@ -1,12 +1,12 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList.jsx';
 import './App.css';
 
 function App() {
 
   const [pictureList, setPictureList] = useState([]);
-  const [likedPictureID, setLikedPictureID] = useState('');
 
   useEffect(() => {
     // console.log('useEffect - page load');
@@ -53,17 +53,11 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        
         {
-        pictureList.map(picture => {
-          return <div key={picture.id}>
-                  <img id="image" 
-                  src={picture.path} 
-                  alt={picture.description} />
-                  <button value={picture.id} id="like-submit" onClick={(event) => likePicture(event.target.value)}>👍</button> 
-                  {picture.likes} people like this picture!
-                </div>
-        })
+          <GalleryList 
+            pictureList={pictureList}
+            likePicture={likePicture}
+          />
         }
       
       </div>
