@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #169261;
   padding: 1em;
   color: white;
   margin-bottom: 1em;
@@ -13,12 +13,15 @@
   font-size: 1.5em;
 }
 
-#image {
-  height: 300px;
-  width: 300px;
-}
-
 .image-div {
   height: 300px;
+}
+
+.text-div {
+  height: 250px;
+}
+
+.App-footer {
+  margin: 20px;
 }
 

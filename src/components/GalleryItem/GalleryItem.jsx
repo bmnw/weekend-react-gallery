@@ -2,12 +2,11 @@ import {useState} from 'react'; // needed for conditional rendering
 import './GalleryItem.css';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
-import CardActionArea from '@mui/material/CardActionArea';
+import {CardActionArea} from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
 
@@ -16,7 +15,7 @@ function GalleryItem({picture, likePicture}) {
     const [showImage, setShowImage] = useState(true);
 
     return  <Card elevation={10} className="image-div">
-                
+                <CardActionArea>
                 {
                     showImage ? (
                         <CardMedia
@@ -27,8 +26,9 @@ function GalleryItem({picture, likePicture}) {
                         onClick={() => setShowImage(!showImage)}
                         />
                     ) : (
-                        
+                       
                         <Typography 
+                            className="text-div"
                             fontSize={25} 
                             onClick={() => setShowImage(!showImage)}
                         >
@@ -37,13 +37,16 @@ function GalleryItem({picture, likePicture}) {
                         
                     )
                 }
-                <CardContent>
-                    <IconButton onClick={(event) => likePicture(picture.id)}>
+                </CardActionArea>
+                <CardActions disableSpacing>
+                    <IconButton  onClick={(event) => likePicture(picture.id)}>
                         <FavoriteIcon sx={{color: "red"}} />
                     </IconButton>
-                    {/* <Button variant="contained" id="like-submit" onClick={(event) => likePicture(picture.id)}>👍</Button>  */}
-                            {picture.likes} people like this picture!
-                </CardContent>
+                    {picture.likes} likes!
+                    <IconButton>
+                        <DeleteIcon/>
+                    </IconButton>
+                </CardActions>
             </Card>
             
 }

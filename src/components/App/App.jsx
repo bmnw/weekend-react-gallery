@@ -6,7 +6,10 @@ import './App.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
+
+
 function App() {
+
 
   const [pictureList, setPictureList] = useState([]);
 
@@ -44,19 +47,22 @@ function App() {
 
     return (
       <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Gallery of My Life</h1>
-          </header>
-          <Container maxWidth="sm">
-            <Grid container spacing={2}>
-            {
-              <GalleryList 
-                pictureList={pictureList}
-                likePicture={likePicture}
-              />
-            }
-            </Grid>
-          </Container>
+            <header className="App-header">
+              <h1 className="App-title">Pick A Few Pictures</h1>
+            </header>
+            <Container maxWidth="md">
+              <Grid container spacing={4}>
+              {
+                <GalleryList 
+                  pictureList={pictureList}
+                  likePicture={likePicture}
+                />
+              }
+              </Grid>
+            </Container>
+            <footer className="App-footer">
+              <span>©️ 2022</span>
+            </footer>
       </div>
     );
 }
