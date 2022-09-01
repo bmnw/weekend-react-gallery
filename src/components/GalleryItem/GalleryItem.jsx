@@ -9,6 +9,7 @@ import {CardActionArea} from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box';
 
 
 function GalleryItem({picture, likePicture, fetchPictures}) {
@@ -57,7 +58,8 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
                     <IconButton  onClick={(event) => likePicture(picture.id)}>
                         <FavoriteIcon sx={{color: "red"}} />
                     </IconButton>
-                    {picture.likes} likes
+                    <span>{picture.likes}{'\u00A0'}likes</span>
+                    <Box sx={{ width: '100%' }}></Box>
                     <IconButton onClick={(event) => deleteImage(picture.id)}>
                         <DeleteIcon/>
                     </IconButton>
