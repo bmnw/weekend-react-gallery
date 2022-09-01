@@ -34,6 +34,7 @@ const GalleryForm = ({fetchPictures}) => {
     return (
             <form onSubmit={addImage}>
                 <TextField 
+                    style={{margin: 10}}
                     size="small"
                     label="Image Link"
                     required
@@ -45,13 +46,14 @@ const GalleryForm = ({fetchPictures}) => {
                 <TextField 
                     size="small"
                     label="Image Description"
+                    style={{width: 400, margin: 10}}
                     required
                     id="image-description"
                     helperText="Enter image description here."
                     value={imageDescription}
                     onChange={(event) => setImageDescription(event.target.value)}
                 />
-                <Button variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
+                <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
             </form>
     )
 }

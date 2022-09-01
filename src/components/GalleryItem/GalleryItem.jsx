@@ -53,11 +53,11 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
                     )
                 }
                 </CardActionArea>
-                <CardActions disableSpacing>
+                <CardActions>
                     <IconButton  onClick={(event) => likePicture(picture.id)}>
                         <FavoriteIcon sx={{color: "red"}} />
                     </IconButton>
-                    {picture.likes} likes!
+                    {picture.likes} likes
                     <IconButton onClick={(event) => deleteImage(picture.id)}>
                         <DeleteIcon/>
                     </IconButton>
