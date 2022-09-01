@@ -26,14 +26,31 @@ router.get('/', (req, res) => {
     console.log('in GET /gallery');
     const queryText = 'SELECT * FROM "gallery" ORDER BY "id";'
     pool.query(queryText)
-    .then((result) => {
-        console.log('SELECT SUCCESS');
-        res.send(result.rows);
-    }).catch((error) => {
-        console.log('ERROR in GET /gallery', error);
-        res.sendStatus(500);
-    });
+        .then((result) => {
+            console.log('SELECT SUCCESS');
+            res.send(result.rows);
+        }).catch((error) => {
+            console.log('ERROR in GET /gallery', error);
+            res.sendStatus(500);
+        });
     // res.send(galleryItems);
 }); // END GET Route
+
+// POST Route using database
+router.post('/', (req, res) => {
+    console.log('in POST /gallery');
+    const imageToAdd = req.body;
+    console.log('imageToAdd', imageToAdd);
+    const queryText =   `INSERT INTO "gallery" ("path", "description")
+                        VALUES ($1, $2);`
+    pool.query(queryText, [imageToAdd.path, imageToAdd.description])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('ERROR in POST /gallery', error);
+            res.sendStatus(500);
+        });
+});
 
 module.exports = router;

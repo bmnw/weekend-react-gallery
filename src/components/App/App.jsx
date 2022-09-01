@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 import './App.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -50,6 +51,9 @@ function App() {
             <header className="App-header">
               <h1 className="App-title">Pick A Few Pictures</h1>
             </header>
+            <GalleryForm 
+              fetchPictures={fetchPictures}
+            />
             <Container maxWidth="md">
               <Grid container spacing={4}>
               {
