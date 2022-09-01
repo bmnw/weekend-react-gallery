@@ -3,7 +3,7 @@ import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
-import Axios from 'axios';
+
 
 const GalleryForm = ({fetchPictures}) => {
 
@@ -14,6 +14,14 @@ const GalleryForm = ({fetchPictures}) => {
         event.preventDefault();
         console.log('in addImage');
         console.log('addImage', imagePath, imageDescription);
+        if(imageDescription.length > 100){
+            swal({
+                title: "Too long!",
+                text: "Please shorten the description to 100 characters or less.",
+                icon: "info"
+            });
+            return
+        }
         axios({
             method: 'POST',
             url: '/gallery',

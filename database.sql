@@ -4,7 +4,7 @@ CREATE TABLE "gallery" (
 	"id" serial PRIMARY KEY,
 	"path" varchar(250) NOT NULL,
 	"description" varchar(100) NOT NULL,
-	"likes" integer
+	"likes" integer DEFAULT 0;
 );
 
 -- "gallery" images
