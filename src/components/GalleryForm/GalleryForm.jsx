@@ -33,20 +33,21 @@ const GalleryForm = ({fetchPictures}) => {
 
     return (
             <form onSubmit={addImage}>
-                <label>Image Link:</label>
                 <TextField 
                     size="small"
+                    label="Image Link"
                     required
                     id="image-path"
+                    helperText="Enter image link here."
                     value={imagePath}
                     onChange={(event) => setImagePath(event.target.value)}
                 />
-                <label>Image Description:</label>
-                <TextareaAutosize 
-                    minRows={2}
-                    style={{width: 200}}
+                <TextField 
+                    size="small"
+                    label="Image Description"
                     required
                     id="image-description"
+                    helperText="Enter image description here."
                     value={imageDescription}
                     onChange={(event) => setImageDescription(event.target.value)}
                 />

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import Header from '../Header/Header.jsx';
 import GalleryList from '../GalleryList/GalleryList.jsx';
 import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 import './App.css';
@@ -9,10 +10,12 @@ import Grid from '@mui/material/Grid';
 
 
 
+
 function App() {
 
 
   const [pictureList, setPictureList] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     // console.log('useEffect - page load');
@@ -48,12 +51,18 @@ function App() {
 
     return (
       <div className="App">
-            <header className="App-header">
-              <h1 className="App-title">Pick A Few Pictures</h1>
-            </header>
-            <GalleryForm 
-              fetchPictures={fetchPictures}
+            <Header 
+              showForm={showForm}
+              setShowForm={setShowForm}
             />
+            {
+              showForm ? (<GalleryForm 
+                            fetchPictures={fetchPictures}
+                          />
+              ) : (
+                  <span></span>
+              )
+            }
             <Container maxWidth="md">
               <Grid container spacing={4}>
               {
