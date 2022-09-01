@@ -60,6 +60,7 @@ function App() {
                 <GalleryList 
                   pictureList={pictureList}
                   likePicture={likePicture}
+                  fetchPictures={fetchPictures}
                 />
               }
               </Grid>
