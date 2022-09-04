@@ -3,6 +3,8 @@ import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 // import MUI dialogue requirements
+import ImageSubmitAlert from '../ImageSubmitAlert/ImageSubmitAlert.jsx';
+
 
 
 
@@ -11,6 +13,8 @@ const GalleryForm = ({fetchPictures}) => {
     const [imagePath, setImagePath] = useState('');
     const [imageDescription, setImageDescription] = useState('');
     // insert MUI dialogue variables below
+   
+    const [open, setOpen] = useState(false);
 
     const addImage = (event) => {
         event.preventDefault();
@@ -23,6 +27,8 @@ const GalleryForm = ({fetchPictures}) => {
             //     text: "Please shorten the description to 100 characters or less.",
             //     icon: "info"
             // });
+            console.log('in conditional');
+            setOpen(true);
             return
         }
         axios({
@@ -42,7 +48,8 @@ const GalleryForm = ({fetchPictures}) => {
         });
     } // end addImage
 
-    return (
+    return ( <div>
+           
             <form onSubmit={addImage}>
                 <TextField 
                     style={{margin: 10}}
@@ -63,9 +70,15 @@ const GalleryForm = ({fetchPictures}) => {
                     helperText="Enter image description here."
                     value={imageDescription}
                     onChange={(event) => setImageDescription(event.target.value)}
+                   
                 />
                 <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
             </form>
+                <ImageSubmitAlert 
+                    open={open}
+                    setOpen={setOpen}
+                />
+            </div>
     )
 }
 
