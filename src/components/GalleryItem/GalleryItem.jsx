@@ -58,6 +58,7 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
                     <IconButton  onClick={(event) => likePicture(picture.id)}>
                         <FavoriteIcon sx={{color: "red"}} />
                     </IconButton>
+                    {/* non breaking space below to prevent line break between picture.likes and "likes" */}
                     <span>{picture.likes}{'\u00A0'}likes</span>
                     <Box sx={{ width: '100%' }}></Box>
                     <IconButton onClick={(event) => deleteImage(picture.id)}>

@@ -2,24 +2,27 @@ import { useState } from 'react';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
+// import MUI dialogue requirements
+
 
 
 const GalleryForm = ({fetchPictures}) => {
 
     const [imagePath, setImagePath] = useState('');
     const [imageDescription, setImageDescription] = useState('');
+    // insert MUI dialogue variables below
 
     const addImage = (event) => {
         event.preventDefault();
         console.log('in addImage');
         console.log('addImage', imagePath, imageDescription);
         if(imageDescription.length > 100){
-            swal({
-                title: "Too long!",
-                text: "Please shorten the description to 100 characters or less.",
-                icon: "info"
-            });
+            // insert MUI dialogue code block below
+            // swal({
+            //     title: "Too long!",
+            //     text: "Please shorten the description to 100 characters or less.",
+            //     icon: "info"
+            // });
             return
         }
         axios({
