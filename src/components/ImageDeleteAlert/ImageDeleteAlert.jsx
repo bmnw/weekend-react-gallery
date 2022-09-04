@@ -5,14 +5,36 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-const ImageDeleteAlert = () => {
+const ImageDeleteAlert = ({deleteAlert, setDeleteAlert, deleteImage, deleteId}) => {
     
     // include delete alert dialog functions and variables below
-    
+    const closeDeleteAlert = () => {
+        setDeleteAlert(false);
+      };
+
+
     return (
         // include delete alert dialog code block below
-        <span>Image Delete Alert</span>
-    )
+                <div>
+                    <Dialog 
+                        open={deleteAlert}
+                        onClose={closeDeleteAlert}
+                    >
+                        <DialogTitle>
+                            {"Just a sec!"}
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>
+                                Are you sure you want to delete this post?
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={(event) => deleteImage(deleteId)}>Delete Post</Button>
+                            <Button onClick={closeDeleteAlert} autoFocus>Keep Post</Button>
+                        </DialogActions>
+                    </Dialog>
+                </div>
+            )
 }
 
 export default ImageDeleteAlert;

@@ -17,10 +17,19 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
 
     const [showImage, setShowImage] = useState(true);
     // include delete alert dialog constants below
+    const [deleteAlert, setDeleteAlert] = useState(false);
+    const [deleteId, setDeleteId] = useState('');
+
+    const confirmDeleteImage = (inputId) => {
+        console.log('in confirmDeleteImage');
+        setDeleteId(inputId);
+        setDeleteAlert(true);
+    }
 
     const deleteImage = (inputId) => {
         console.log('in deleteImage');
         console.log('inputId', inputId);
+        setDeleteAlert(false);
         axios({
             method: 'DELETE',
             url: `/gallery/${inputId}`
@@ -32,7 +41,8 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
         });
     } // end deleteImage
 
-    return  <Card elevation={10} className="image-div">
+    return  (<div>
+            <Card elevation={10} className="image-div">
                 <CardActionArea>
                 {
                     showImage ? (
@@ -63,12 +73,18 @@ function GalleryItem({picture, likePicture, fetchPictures}) {
                     {/* non breaking space below to prevent line break between picture.likes and "likes" */}
                     <span>{picture.likes}{'\u00A0'}likes</span>
                     <Box sx={{ width: '100%' }}></Box>
-                    <IconButton onClick={(event) => deleteImage(picture.id)}>
+                    <IconButton onClick={(event) => confirmDeleteImage(picture.id)}>
                         <DeleteIcon/>
                     </IconButton>
                 </CardActions>
             </Card>
-            
+            <ImageDeleteAlert 
+                deleteAlert={deleteAlert}
+                setDeleteAlert={setDeleteAlert}
+                deleteImage={deleteImage}
+                deleteId={deleteId}
+            />
+            </div>)
 }
 
 export default GalleryItem;
