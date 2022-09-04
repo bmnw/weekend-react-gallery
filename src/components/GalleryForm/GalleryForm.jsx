@@ -45,30 +45,30 @@ const GalleryForm = ({fetchPictures}) => {
 
     return ( <div>
            
-            <form onSubmit={addImage}>
-                <TextField 
-                    style={{margin: 10}}
-                    size="small"
-                    label="Image Link"
-                    required
-                    id="image-path"
-                    helperText="Enter image link here."
-                    value={imagePath}
-                    onChange={(event) => setImagePath(event.target.value)}
-                />
-                <TextField 
-                    size="small"
-                    label="Image Description"
-                    style={{width: 400, margin: 10}}
-                    required
-                    id="image-description"
-                    helperText="Enter image description here."
-                    value={imageDescription}
-                    onChange={(event) => setImageDescription(event.target.value)}
-                   
-                />
-                <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
-            </form>
+                <form onSubmit={addImage}>
+                    <TextField 
+                        style={{margin: 10}}
+                        size="small"
+                        label="Image Link"
+                        required
+                        id="image-path"
+                        helperText="Enter image link here."
+                        value={imagePath}
+                        onChange={(event) => setImagePath(event.target.value)}
+                    />
+                    <TextField 
+                        size="small"
+                        label="Image Description"
+                        style={{width: 400, margin: 10}}
+                        required
+                        id="image-description"
+                        helperText="Enter image description here."
+                        value={imageDescription}
+                        onChange={(event) => setImageDescription(event.target.value)}
+                    
+                    />
+                    <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
+                </form>
                 <ImageSubmitAlert 
                     open={open}
                     setOpen={setOpen}

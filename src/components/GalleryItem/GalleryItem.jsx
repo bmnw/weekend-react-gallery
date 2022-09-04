@@ -1,6 +1,7 @@
 import {useState} from 'react'; // needed for conditional rendering
 import axios from 'axios';
 import './GalleryItem.css';
+import ImageDeleteAlert from '../ImageDeleteAlert/ImageDeleteAlert.jsx';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
@@ -15,6 +16,7 @@ import Box from '@mui/material/Box';
 function GalleryItem({picture, likePicture, fetchPictures}) {
 
     const [showImage, setShowImage] = useState(true);
+    // include delete alert dialog constants below
 
     const deleteImage = (inputId) => {
         console.log('in deleteImage');
