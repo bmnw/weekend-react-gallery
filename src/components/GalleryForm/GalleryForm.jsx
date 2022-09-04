@@ -22,11 +22,6 @@ const GalleryForm = ({fetchPictures}) => {
         console.log('addImage', imagePath, imageDescription);
         if(imageDescription.length > 100){
             // insert MUI dialogue code block below
-            // swal({
-            //     title: "Too long!",
-            //     text: "Please shorten the description to 100 characters or less.",
-            //     icon: "info"
-            // });
             console.log('in conditional');
             setOpen(true);
             return

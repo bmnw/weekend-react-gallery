@@ -72,6 +72,7 @@ For each `feature` of your application, make a branch, work on the branch, and t
 - [x] Ability to delete a gallery item
 - [x] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
 - [x] toggle displaying add image form using add icon button
+- [x] MUI dialog alert when user input image description is greater than 100 characters
 - Use [multer](https://github.com/expressjs/multer) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
