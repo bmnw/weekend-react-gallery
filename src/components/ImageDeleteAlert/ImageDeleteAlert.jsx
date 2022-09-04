@@ -29,8 +29,8 @@ const ImageDeleteAlert = ({deleteAlert, setDeleteAlert, deleteImage, deleteId}) 
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={(event) => deleteImage(deleteId)}>Delete Post</Button>
-                            <Button onClick={closeDeleteAlert} autoFocus>Keep Post</Button>
+                            <Button variant="outlined" onClick={(event) => deleteImage(deleteId)}>Delete Post</Button>
+                            <Button variant="contained" onClick={closeDeleteAlert} autoFocus>Keep Post</Button>
                         </DialogActions>
                     </Dialog>
                 </div>
