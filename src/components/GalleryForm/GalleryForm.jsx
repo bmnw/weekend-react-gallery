@@ -26,6 +26,10 @@ const GalleryForm = ({fetchPictures}) => {
             setOpen(true);
             return
         }
+        // const formData = new FormData();
+        // formData.append("path", imagePath);
+        // formData.append("description", imageDescription);
+        // console.log(formData);
         axios({
             method: 'POST',
             url: '/gallery',
@@ -45,14 +49,16 @@ const GalleryForm = ({fetchPictures}) => {
 
     return ( <div>
            {/* update image path TextField to allow for choosing file to upload */}
-                <form onSubmit={addImage}>
+                <form action="/gallery" encType="multipart/form-data" method="post" >
                     <TextField 
                         style={{margin: 10}}
                         size="small"
-                        label="Image Link"
+                        // label="Image Link"
+                        type="file"
+                        name="uploaded_file"
                         required
                         id="image-path"
-                        helperText="Enter image link here."
+                        helperText="Select image from files."
                         value={imagePath}
                         onChange={(event) => setImagePath(event.target.value)}
                     />
@@ -61,13 +67,15 @@ const GalleryForm = ({fetchPictures}) => {
                         label="Image Description"
                         style={{width: 400, margin: 10}}
                         required
+                        type="text"
+                        name="description"
                         id="image-description"
                         helperText="Enter image description here."
                         value={imageDescription}
                         onChange={(event) => setImageDescription(event.target.value)}
                     
                     />
-                    <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" onClick={addImage}>Add Image</Button>
+                    <Button style={{margin: 10}} variant="contained" color="secondary" type="submit" >Add Image</Button>
                 </form>
                 <ImageSubmitAlert 
                     open={open}

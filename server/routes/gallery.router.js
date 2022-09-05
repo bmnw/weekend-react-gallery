@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 // const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js');
+const multer = require("multer");
+const upload = multer({ dest: '../public/uploads'});
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
@@ -37,15 +39,17 @@ router.get('/', (req, res) => {
 }); // END GET Route
 
 // POST Route using database
-router.post('/', (req, res) => {
-    console.log('in POST /gallery');
+router.post('/', upload.single('uploaded_file'), (req, res, next) => {
+    console.log('in POST /gallery', req.file, req.body);
     // change variable name for req.body 
-    const imageToAdd = req.body;
+    const textToAdd = req.body;
     // add req.files
-    console.log('imageToAdd', imageToAdd);
+    const fileToAdd = req.file;
+    console.log('textToAdd', textToAdd);
+    console.log('fileToAdd', fileToAdd);
     const queryText =   `INSERT INTO "gallery" ("path", "description")
                         VALUES ($1, $2);`
-    pool.query(queryText, [imageToAdd.path, imageToAdd.description])
+    pool.query(queryText, [fileToAdd.path, textToAdd.description])
         .then((result) => {
             res.sendStatus(200);
         })
