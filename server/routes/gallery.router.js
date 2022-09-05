@@ -39,7 +39,9 @@ router.get('/', (req, res) => {
 // POST Route using database
 router.post('/', (req, res) => {
     console.log('in POST /gallery');
+    // change variable name for req.body 
     const imageToAdd = req.body;
+    // add req.files
     console.log('imageToAdd', imageToAdd);
     const queryText =   `INSERT INTO "gallery" ("path", "description")
                         VALUES ($1, $2);`

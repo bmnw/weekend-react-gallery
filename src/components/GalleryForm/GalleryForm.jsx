@@ -44,7 +44,7 @@ const GalleryForm = ({fetchPictures}) => {
     } // end addImage
 
     return ( <div>
-           
+           {/* update image path TextField to allow for choosing file to upload */}
                 <form onSubmit={addImage}>
                     <TextField 
                         style={{margin: 10}}

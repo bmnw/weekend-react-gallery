@@ -8,11 +8,7 @@ import './App.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
-
-
-
 function App() {
-
 
   const [pictureList, setPictureList] = useState([]);
   const [showForm, setShowForm] = useState(false);
