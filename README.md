@@ -1,14 +1,11 @@
-# PROJECT NAME
+# Pick A Few Pictures
 
-Pick A Few Pictures
 
 ## Description
 
 _Duration: 1.5 weeks_
 
-What problem did you solve? How did you solve it? 
-
-Pictures are one of the best ways to convey an experience to someone or record memories for youself! Pick A Few Pictures is an application that catalogs and displays photos with a short description. 
+Pictures are one of the best ways to convey an experience to someone and record memories for youself! Pick A Few Pictures is an application that catalogs and displays photos with a short description. 
 
 Click an image to reveal the image description. Click again to return to the image.
 
@@ -40,15 +37,12 @@ Click the 'Add' button at the top of the page to add an image to the gallery usi
 6. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+Whether you want to curate images from a particular trip or if you want to post a selfie everday for a year, Pick A Few Pictures provides a platform for that!
 
+Populate the database with images from your life and a short description to share with others, or use the 'Add Image' feature on the webpage to add photos with a url link and its description.
+
+When you want to update the gallery, delete images as needed, and add your new images!
 
 ## Built With
 
@@ -58,3 +52,6 @@ How does someone use this application? Tell a user story here.
 - [React](https://reactjs.org/)
 - [Postgres](https://www.postgresql.org/download/)
 - [Material UI](https://mui.com/)
+- JavaScript
+- CSS
+- HTML
