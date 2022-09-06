@@ -15,7 +15,7 @@ Click the 'Add' button at the top of the page to add an image to the gallery usi
 
 ## Screen Shots
 
-![Pick A Few Pictures](public/screenshots/PickAFewPictures_showingText.jpg)
+![Pick A Few Pictures](public/screenshots/PickAFewPictures_showingtext.jpg)
 
 ![Pick A Few Pictures Add Image](public/screenshots/PickAFewPictures_addimage.jpg)
 
