@@ -13,7 +13,7 @@ The posts can be liked by others and can also be deleted if they are no longer r
 
 Click the 'Add' button at the top of the page to add an image to the gallery using a url link.
 
-## Screen Shot
+## Screen Shots
 
 ![Pick A Few Pictures](public/screenshots/PickAFewPictures.jpg)
 
