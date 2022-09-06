@@ -62,7 +62,7 @@ const GalleryForm = ({fetchPictures}) => {
                         style={{width: 400, margin: 10}}
                         required
                         id="image-description"
-                        helperText="Enter image description here."
+                        helperText="Enter image description here. 100 character max."
                         value={imageDescription}
                         onChange={(event) => setImageDescription(event.target.value)}
                     
